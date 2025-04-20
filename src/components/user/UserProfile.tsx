@@ -2,6 +2,7 @@ import { useQuery } from "@apollo/client";
 import React from "react";
 import { UserData } from "../../types";
 import { GET_USER } from "../../queries";
+import UserCard from "./UserCard";
 
 type UserProfileProps = {
   userName: string;
@@ -25,7 +26,8 @@ const UserProfile = ({ userName }: UserProfileProps) => {
   } = data.user;
   return (
     <div>
-      <h1 className="text-2xl font-bold">{bio}</h1>
+      {/* <h1 className="text-2xl font-bold">{bio}</h1> */}
+      <UserCard bio={bio} avatarUrl={avatarUrl} name={name} url={url} />
     </div>
   );
 };
