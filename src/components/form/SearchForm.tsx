@@ -1,7 +1,7 @@
-import React, { FormEvent, useState } from "react";
-import TextField from "@mui/material/TextField";
 import { Button } from "@mui/material";
-import { ToastContainer, toast } from "react-toastify";
+import TextField from "@mui/material/TextField";
+import React, { FormEvent, useState } from "react";
+import { toast } from "react-toastify";
 
 type SearchFormProps = {
   userName: string;

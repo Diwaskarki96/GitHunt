@@ -1,8 +1,8 @@
 import { useQuery } from "@apollo/client";
-import React from "react";
-import { UserData } from "../../types";
 import { GET_USER } from "../../queries";
+import { UserData } from "../../types";
 import UserCard from "./UserCard";
+import StatsContainer from "./StatsContainer";
 
 type UserProfileProps = {
   userName: string;
@@ -28,6 +28,12 @@ const UserProfile = ({ userName }: UserProfileProps) => {
     <div>
       {/* <h1 className="text-2xl font-bold">{bio}</h1> */}
       <UserCard bio={bio} avatarUrl={avatarUrl} name={name} url={url} />
+      <StatsContainer
+        totalRepos={repositories.totalCount}
+        followers={followers.totalCount}
+        following={following.totalCount}
+        gists={gists.totalCount}
+      />
     </div>
   );
 };

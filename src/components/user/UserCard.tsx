@@ -31,7 +31,7 @@ const UserCard = ({ avatarUrl, name, bio, url }: UserCardProps) => {
           sx={{
             bgcolor: "black",
             fontSize: "12px",
-            width: "70%",
+            width: "50%",
             padding: "0.5rem",
           }}
         >
