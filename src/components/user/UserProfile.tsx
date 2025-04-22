@@ -6,6 +6,7 @@ import StatsContainer from "./StatsContainer";
 import ForkedRepos from "../chart/ForkedRepos";
 import PopularRepos from "../chart/PopularRepos";
 import UsedLanguages from "../chart/UsedLanguages";
+import Loading from "./loading";
 
 type UserProfileProps = {
   userName: string;
@@ -14,7 +15,7 @@ const UserProfile = ({ userName }: UserProfileProps) => {
   const { data, loading, error } = useQuery<UserData>(GET_USER, {
     variables: { login: userName },
   });
-  if (loading) return <p>Loading...</p>;
+  if (loading) return <Loading />;
   if (error) return <h2 className="text-xl">Error: {error.message}</h2>;
   if (!data) return <h2 className="text-xl">No data found</h2>;
   const {
