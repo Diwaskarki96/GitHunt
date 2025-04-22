@@ -5,6 +5,7 @@ import UserCard from "./UserCard";
 import StatsContainer from "./StatsContainer";
 import ForkedRepos from "../chart/ForkedRepos";
 import PopularRepos from "../chart/PopularRepos";
+import UsedLanguages from "../chart/UsedLanguages";
 
 type UserProfileProps = {
   userName: string;
@@ -40,6 +41,7 @@ const UserProfile = ({ userName }: UserProfileProps) => {
         <div className="grid md:grid-cols-2 gap-4">
           <ForkedRepos repositories={repositories.nodes} />
           <PopularRepos repositories={repositories.nodes} />
+          <UsedLanguages repositories={repositories.nodes} />
         </div>
       )}
     </div>
